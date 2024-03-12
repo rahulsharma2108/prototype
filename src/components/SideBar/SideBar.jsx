@@ -2,12 +2,12 @@ import axios from 'axios';
 import { Card } from "../Card/Card"
 import './sidebar.scss'
 import { useEffect, useState } from 'react';
+import { API_BASE_URL } from '../../common/utils';
 
 export const Sidebar = ({selectedNav})=>{
-    console.log('selected',selectedNav)
     const [cards,setCards] = useState([]);
     useEffect(()=>{
-        axios.get('/data/cards.json').then((data)=>{
+        axios.get(`${API_BASE_URL}/data/cards.json`).then((data)=>{
             setCards(data.data);
         })
     },[selectedNav])
