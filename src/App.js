@@ -11,7 +11,7 @@ function App() {
   const toggleSideBar = (clickedItem, activeItem)=>{
   if(clickedItem === activeItem)
     setShowSidebar(!showSidebar)
-    setSelectedNav(activeItem)
+    setSelectedNav(clickedItem)
   }
   return (
     <div className='layout'>

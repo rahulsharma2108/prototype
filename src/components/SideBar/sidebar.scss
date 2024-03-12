@@ -1,3 +1,12 @@
 .sidebar{
     padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.container-full-length{
+    width:100%
+}
+.container-half-length{
+    display: flex;
 }

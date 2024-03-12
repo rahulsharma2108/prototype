@@ -3,10 +3,11 @@
   height: 100vh;
 }
 .sidebar-container{
-  flex:1;
+  // flex:1;
   border-right: 1px solid #fff4ec;
   background-color:#f0e7d9;
   box-shadow:3px 0px 6px grey;
+  width:375px;
 
 }
 .content-container{

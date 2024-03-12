@@ -1,6 +1,17 @@
 [
     {
         "title":"Quiz: what's my love language",
-        "image": "bg1.jpg"
+        "image": "bg1.jpg",
+        "layout":"full-length"   
+    },
+    {
+        "title":"How to save money?",
+        "image": "money.jpg",
+        "layout":"half-length"
+    },
+    {
+        "title":"How much water to drink in a day?",
+        "image": "water.jpg",
+        "layout":"half-length"
     }
 ]
