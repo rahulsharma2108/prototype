@@ -1,23 +1,32 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import { NavBar } from './components/NavBar';
+import { Sidebar } from './components/SideBar/SideBar';
+import { Content } from './components/Content/Content';
+import { useState } from 'react';
 
 function App() {
+  const [showSidebar, setShowSidebar] = useState(true);
+  const [selectedNav, setSelectedNav] = useState('discover');
+  const toggleSideBar = (clickedItem, activeItem)=>{
+  if(clickedItem === activeItem)
+    setShowSidebar(!showSidebar)
+    setSelectedNav(activeItem)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='layout'>
+      <nav>
+        <NavBar toggleNav={toggleSideBar}/>  
+      </nav>
+      
+     {showSidebar && <div className='sidebar-container'>
+        <Sidebar selectedNav={selectedNav}/>
+      </div>}
+      <div className='content-container'>
+        <Content/>
+      </div>
+      
+
     </div>
   );
 }

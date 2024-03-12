@@ -1,0 +1,26 @@
+.content{
+    padding: 30px;  
+    width: 80%;  
+    .input-element{
+        width: 100%;
+        padding: 10px;
+        border-radius: 15px;
+        background: white;
+        border-color: #eae1d1;
+    }
+    .input-element:focus {
+        border-color: #eae1d1; /* Border color when input is focused */
+    }
+    .response{
+        display: flex;
+        overflow: auto;
+        height: 80vh;
+        .response-content{
+            padding: 0 20px;
+        }
+        .favorite-icon img{
+            width: 30px;
+            margin-top: 20px;
+        }
+    }
+}
