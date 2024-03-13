@@ -22,6 +22,12 @@
         "title":"How to be a Mentor?",
         "image": "mentor.jpg",
         "layout":"full-length"
+    },
+    {
+        "id":"5",
+        "title":"How to be a Mentor?",
+        "image": "bg1.jpg",
+        "layout":"with-image"
     }
 
 ]

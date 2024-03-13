@@ -1,0 +1,40 @@
+.question-card-container {
+    font-size: 34px;
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid #f0e7d9;
+    border-radius: 20px;
+    padding: 20px;
+    align-items: flex-end;
+    margin-bottom: 20px;
+
+    &.card {
+        color: #000;
+        font-weight: 700;
+        border: 1px solid #fff;
+        background-color: #fff4ec;
+        width: 90%;
+        font-size: 23px;
+        cursor: pointer;
+
+        &:hover {
+            -webkit-transform: scale(0.9);
+            -ms-transform: scale(0.9);
+            transform: scale(0.9);
+            transition: 0.5s ease;
+        }
+
+        img {
+            width: 134px;
+            height: 134px;
+            object-fit: cover;
+        }
+    }
+
+    img {
+        width: 350px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+}

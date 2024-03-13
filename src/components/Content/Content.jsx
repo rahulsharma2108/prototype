@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { AppContext } from '../../AppContext';
 import fav from '../../assets/icons/favorites.png'
-import { QuestionCard } from './QuestionCard'
+import { QuestionCard } from '../Card/QuestionCard'
 import './content.scss'
 import { API_BASE_URL } from '../../common/utils';
 import axios from 'axios';
@@ -31,37 +31,7 @@ export const Content = () => {
                 <img src={fav}/>
             </div>
             <div className='response-content'>
-                <QuestionCard cardDetail={selectedCardDetail}/>
-                {!selectedCardDetail &&<p>Mentorship can have a profound impact on both the mentor and mentee? Not only can it provide valuable guidance and support, but it can also lead to personal and professional growth for both parties.
-                Here are some key tips:
-                Build a strong foundation: Establish a trusting and respectful relationship with your mentee by getting to know them and understanding their goals and needs.
-                Be a guide, not a dictator: Rather than telling your mentee what to do, guide them towards discovering their own solutions and making their own decisions.
-
-                Mentorship can have a profound impact on both the mentor and mentee? Not only can it provide valuable guidance and support, but it can also lead to personal and professional growth for both parties.
-                Here are some key tips:
-                Build a strong foundation: Establish a trusting and respectful relationship with your mentee by getting to know them and understanding their goals and needs.
-                • Be a guide, not a dictator: Rather than telling your mentee what to do, guide them towards discovering their own solutions and making their own decisions.
-
-                Mentorship can have a profound impact on both the mentor and mentee? Not only can it provide valuable guidance and support, but it can also lead to personal and professional growth for both parties.
-                Here are some key tips:
-                Build a strong foundation: Establish a trusting and respectful relationship with your mentee by getting to know them and understanding their goals and needs.
-                • Be a guide, not a dictator: Rather than telling your mentee what to do, guide them towards discovering their own solutions and making their own decisions.
-
-                Mentorship can have a profound impact on both the mentor and mentee? Not only can it provide valuable guidance and support, but it can also lead to personal and professional growth for both parties.
-                Here are some key tips:
-                Build a strong foundation: Establish a trusting and respectful relationship with your mentee by getting to know them and understanding their goals and needs.
-                • Be a guide, not a dictator: Rather than telling your mentee what to do, guide them towards discovering their own solutions and making their own decisions.
-
-                Mentorship can have a profound impact on both the mentor and mentee? Not only can it provide valuable guidance and support, but it can also lead to personal and professional growth for both parties.
-                Here are some key tips:
-                Build a strong foundation: Establish a trusting and respectful relationship with your mentee by getting to know them and understanding their goals and needs.
-                • Be a guide, not a dictator: Rather than telling your mentee what to do, guide them towards discovering their own solutions and making their own decisions.
-
-                Mentorship can have a profound impact on both the mentor and mentee? Not only can it provide valuable guidance and support, but it can also lead to personal and professional growth for both parties.
-                Here are some key tips:
-                Build a strong foundation: Establish a trusting and respectful relationship with your mentee by getting to know them and understanding their goals and needs.
-                • Be a guide, not a dictator: Rather than telling your mentee what to do, guide them towards discovering their own solutions and making their own decisions.
-                </p>}
+                {selectedCardDetail && <QuestionCard title={selectedCardDetail.question} image={selectedCardDetail.image}/>}
                 {selectedCardDetail && <p>{selectedCardDetail.description}</p>}
             </div>
 

@@ -3,6 +3,13 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    height: 80vh;
+    overflow: auto;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+      }
 }
 .container-full-length{
     width:100%

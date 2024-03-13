@@ -1,11 +1,16 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+
 import { Card } from "../Card/Card"
-import './sidebar.scss'
 import { API_BASE_URL } from '../../common/utils';
+import { QuestionCard } from '../Card/QuestionCard';
+
+import './sidebar.scss'
 
 export const Sidebar = ({ selectedNav }) => {
     const [cards, setCards] = useState([]);
+    const bgCards = ['full-length','half-length'];
+
     useEffect(() => {
         let url = '/data/cards.json'
         if (selectedNav === 'fav') {
@@ -19,7 +24,10 @@ export const Sidebar = ({ selectedNav }) => {
         {selectedNav !== "profile" && <>
             {
                 cards?.length > 0 && cards.map((card, index) => {
-                    return <Card key={index} title={card.title} img={card.image} layout={card.layout} id={card.id} />
+                    return <>
+                    {bgCards.indexOf(card.layout) > -1 && <Card key={index} title={card.title} img={card.image} layout={card.layout} id={card.id} />}
+                    {card.layout === 'with-image' && <QuestionCard displayType='card' title={card.title} image={card.image} id={card.id} key={index}/>}
+                    </>
 
                 })
             }
