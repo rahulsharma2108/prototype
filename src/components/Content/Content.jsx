@@ -7,6 +7,7 @@ import { API_BASE_URL } from '../../common/utils';
 import axios from 'axios';
 export const Content = () => {
     const { selectedContentId } = useContext(AppContext);
+    console.log("@@@@",selectedContentId)
     const [cardDetails,setCardDetails] = useState(null)
     const [selectedCardDetail,setSelectedCardDetail] = useState(null)
 
@@ -24,7 +25,7 @@ export const Content = () => {
                 setSelectedCardDetail(selectedCard[0])
             }
         }   
-    },[selectedContentId])
+    },[selectedContentId, cardDetails])
     return <div className='content'>
         <div className='response'>
             <div className='favorite-icon'>

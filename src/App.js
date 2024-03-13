@@ -9,7 +9,7 @@ import { AppContext } from './AppContext';
 function App() {
   const [showSidebar, setShowSidebar] = useState(true);
   const [selectedNav, setSelectedNav] = useState('discover');
-  const [selectedContentId, setSelectedContentId] = useState(null)
+  const [selectedContentId, setSelectedContentId] = useState("1")
   const toggleSideBar = (clickedItem, activeItem)=>{
   if(clickedItem === activeItem)
     setShowSidebar(!showSidebar)
