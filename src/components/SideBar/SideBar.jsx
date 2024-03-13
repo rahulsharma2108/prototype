@@ -19,7 +19,7 @@ export const Sidebar = ({ selectedNav }) => {
         {selectedNav !== "profile" && <>
             {
                 cards?.length > 0 && cards.map((card, index) => {
-                    return <Card key={index} title={card.title} img={card.image} layout={card.layout} />
+                    return <Card key={index} title={card.title} img={card.image} layout={card.layout} id={card.id} />
 
                 })
             }
