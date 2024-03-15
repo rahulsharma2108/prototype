@@ -1,38 +1,33 @@
 import { useContext, useEffect, useState } from 'react';
-import { AppContext } from '../../AppContext';
-import fav from '../../assets/icons/favorites.png'
-import { QuestionCard } from '../Card/QuestionCard'
-import './content.scss'
-import { API_BASE_URL, API_HOST } from '../../common/utils';
 import axios from 'axios';
+import { AppContext } from '../../AppContext';
+import { QuestionCard } from '../Card/QuestionCard'
+import { API_HOST, DEFAULT_CAMPAIGN, getImageUrl } from '../../common/utils';
+import './content.scss'
+import fav from '../../assets/icons/favorites.png'
+
 export const Content = () => {
     const { selectedContentId } = useContext(AppContext);
-    const [cardDetails,setCardDetails] = useState(null)
     const [selectedCardDetail,setSelectedCardDetail] = useState(null)
 
     useEffect(() => {
-        let url = '/content'
+        if(selectedContentId){
+        let url = `/${DEFAULT_CAMPAIGN}/narratives/${selectedContentId}`
        
         axios.get(`${API_HOST}${url}`).then((data) => {
-            setCardDetails(data.data);
+            setSelectedCardDetail(data.data);
         })
-    }, [])
-    useEffect(()=>{
-        if(selectedContentId && cardDetails){
-            const selectedCard = cardDetails.filter((cardDetail)=>cardDetail.cardId === selectedContentId)
-            if(selectedCard){
-                setSelectedCardDetail(selectedCard[0])
-            }
-        }   
-    },[selectedContentId, cardDetails])
+    }
+    }, [selectedContentId])
+    
     return <div className='content'>
         <div className='response'>
             <div className='favorite-icon'>
                 <img src={fav}/>
             </div>
             <div className='response-content'>
-                {selectedCardDetail && <QuestionCard title={selectedCardDetail.question} image={selectedCardDetail.image}/>}
-                {selectedCardDetail && <p>{selectedCardDetail.description}</p>}
+                {selectedCardDetail && <QuestionCard title={selectedCardDetail.data.title} image={getImageUrl(selectedCardDetail.data.banner)}/>}
+                {selectedCardDetail && <p>{selectedCardDetail.data.bodytext}</p>}
             </div>
 
         </div>

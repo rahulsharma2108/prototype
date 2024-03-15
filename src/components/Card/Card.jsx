@@ -4,7 +4,7 @@ import { API_BASE_URL } from '../../common/utils'
 import './card.scss'
 
 export const Card = ({ img, title, layout,id }) => {
-    const imgPath = '/images/'
+
     const { setSelectedContentId } = useContext(AppContext);
 
     const getClassName = ()=>{
@@ -18,7 +18,7 @@ export const Card = ({ img, title, layout,id }) => {
     const onCardClick=()=>{
         setSelectedContentId(id);
     }
-    return <div className={`card-container ${getClassName()}`} style={{backgroundImage: `url(${API_BASE_URL}${imgPath}${img})`}} onClick={onCardClick}>
+    return <div className={`card-container ${getClassName()}`} style={{backgroundImage: `url(${img})`}} onClick={onCardClick}>
         <div className='card-content'>
             {title}
         </div>
