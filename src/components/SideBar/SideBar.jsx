@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import { Card } from "../Card/Card"
-import { API_BASE_URL } from '../../common/utils';
+import { API_HOST } from '../../common/utils';
 import { QuestionCard } from '../Card/QuestionCard';
 
 import './sidebar.scss'
@@ -12,11 +12,11 @@ export const Sidebar = ({ selectedNav }) => {
     const bgCards = ['full-length','half-length'];
 
     useEffect(() => {
-        let url = '/data/cards.json'
+        let url = '/cards'
         if (selectedNav === 'fav') {
-            url = "/data/favorites.json"
+            url = "/favs"
         }
-        axios.get(`${API_BASE_URL}${url}`).then((data) => {
+        axios.get(`${API_HOST}${url}`).then((data) => {
             setCards(data.data);
         })
     }, [selectedNav])

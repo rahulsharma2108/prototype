@@ -3,18 +3,17 @@ import { AppContext } from '../../AppContext';
 import fav from '../../assets/icons/favorites.png'
 import { QuestionCard } from '../Card/QuestionCard'
 import './content.scss'
-import { API_BASE_URL } from '../../common/utils';
+import { API_BASE_URL, API_HOST } from '../../common/utils';
 import axios from 'axios';
 export const Content = () => {
     const { selectedContentId } = useContext(AppContext);
-    console.log("@@@@",selectedContentId)
     const [cardDetails,setCardDetails] = useState(null)
     const [selectedCardDetail,setSelectedCardDetail] = useState(null)
 
     useEffect(() => {
-        let url = '/data/content.json'
+        let url = '/content'
        
-        axios.get(`${API_BASE_URL}${url}`).then((data) => {
+        axios.get(`${API_HOST}${url}`).then((data) => {
             setCardDetails(data.data);
         })
     }, [])
