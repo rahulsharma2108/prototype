@@ -10,6 +10,7 @@ function App() {
   const [showSidebar, setShowSidebar] = useState(true);
   const [selectedNav, setSelectedNav] = useState('discover');
   const [selectedContentId, setSelectedContentId] = useState(null)
+  const [selectedNarrativeId, setSelectedNarrativeId] = useState(null)
   const toggleSideBar = (clickedItem, activeItem)=>{
   if(clickedItem === activeItem)
     setShowSidebar(!showSidebar)
@@ -17,7 +18,7 @@ function App() {
   }
   return (
     <div className='layout'>
-      <AppContext.Provider value={{selectedContentId, setSelectedContentId}}>
+      <AppContext.Provider value={{selectedContentId, setSelectedContentId, selectedNarrativeId, setSelectedNarrativeId}}>
       <nav>
         <NavBar toggleNav={toggleSideBar}/>  
       </nav>

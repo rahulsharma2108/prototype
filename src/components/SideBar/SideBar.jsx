@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 
 import { Card } from "../Card/Card"
@@ -6,10 +6,13 @@ import { API_HOST, DEFAULT_CAMPAIGN, getImageUrl } from '../../common/utils';
 import { QuestionCard } from '../Card/QuestionCard';
 
 import './sidebar.scss'
+import { AppContext } from '../../AppContext';
 
 export const Sidebar = ({ selectedNav }) => {
     const [cards, setCards] = useState([]);
     const bgCards = ['full-length','half-length'];
+
+    const { setSelectedContentId } = useContext(AppContext);
 
     useEffect(() => {
         let url = `/${DEFAULT_CAMPAIGN}`
@@ -18,6 +21,12 @@ export const Sidebar = ({ selectedNav }) => {
         }
         axios.get(`${API_HOST}${url}`).then((data) => {
             setCards(data.data.narratives);
+            const narratives = data.data.narratives;
+            const defaultNarrative = narratives && narratives.find(narrattive=> narrattive.isDefault)
+
+            if(defaultNarrative)
+            setSelectedContentId(defaultNarrative.id)
+
         })
     }, [selectedNav])
     return <div className="sidebar">
