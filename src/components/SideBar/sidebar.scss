@@ -4,6 +4,7 @@
     flex-wrap: wrap;
     gap: 10px;
     max-height: 80vh;
+    animation: rollout 2.0s;
     overflow: auto;
     -ms-overflow-style: none; 
     scrollbar-width: none;
@@ -17,3 +18,8 @@
 .container-half-length{
     display: flex;
 }
+@keyframes rollout {
+    0% { transform: translateY(-100px); }
+    100% { transform: none; }
+  }
+  

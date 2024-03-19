@@ -3,6 +3,7 @@ import fav from '../../../assets/icons/favorites.png'
 import { getImageUrl } from '../../../common/utils'
 import { QuestionCard } from '../../Card/QuestionCard'
 import { Recommendations } from './Recommendations'
+import './contentDetails.scss'
 
 export const ContentDetails = ({ contentDetails }) => {
 
@@ -24,7 +25,7 @@ export const ContentDetails = ({ contentDetails }) => {
                 bodytext = '',
                 followups = []
             } = card?.data || {}
-            return <div key={index}>
+            return <div key={index} className='roll-out'>
                 <div className='favorite-icon'>
                     <img src={fav} />
                 </div>
