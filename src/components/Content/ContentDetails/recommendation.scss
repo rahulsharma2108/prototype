@@ -1,0 +1,22 @@
+.recommendation-container{
+    padding-bottom: 10px;
+    .recommendation-card{
+        max-width: 160px;
+        height: 172px;
+        border: 2px solid #f0e7d9;
+        background-color: #f0e7d9;
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: 19px;
+        font-weight: 700;
+        letter-spacing: 0.80px;
+        .icon{
+            width: 48px;
+            height: 48px;
+            margin-left: 100px 
+        }
+    }
+}
