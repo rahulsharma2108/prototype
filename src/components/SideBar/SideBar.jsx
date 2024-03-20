@@ -12,13 +12,14 @@ export const Sidebar = ({ selectedNav }) => {
     const [cards, setCards] = useState([]);
     const bgCards = ['full-length','half-length'];
 
-    const { setSelectedContentId } = useContext(AppContext);
+    const { setSelectedContentId, selectedCampaignId } = useContext(AppContext);
 
     useEffect(() => {
-        let url = `/${DEFAULT_CAMPAIGN}`
+        let url = `/${selectedCampaignId}`
         if (selectedNav === 'fav') {
             url = "/favs"
         }
+        if(selectedCampaignId){
         axios.get(`${API_HOST}${url}`).then((data) => {
             setCards(data.data.narratives);
             const narratives = data.data.narratives;
@@ -28,7 +29,8 @@ export const Sidebar = ({ selectedNav }) => {
             setSelectedContentId(defaultNarrative.id)
 
         })
-    }, [selectedNav])
+    }
+    }, [selectedNav,selectedCampaignId])
     return <div className="sidebar">
         {selectedNav !== "profile" && <>
             {
