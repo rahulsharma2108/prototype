@@ -16,7 +16,7 @@ export const Content = () => {
        
         const question = e.target.question.value
         e.target.question.value = ''
-        let url = `/v1/campaigns/conversations/${DEFAULT_CAMPAIGN}/${selectedContentId}/${question}`
+        let url = `v1/campaigns/conversations/${DEFAULT_CAMPAIGN}/${selectedContentId}/${encodeURIComponent(question)}`
         axios.get(`${SERVER_HOST}${url}`).then((data) => {
             setContentDetails([...contentDetails, data.data]);
             setShowLoader(false)
