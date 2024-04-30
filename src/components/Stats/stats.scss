@@ -1,0 +1,29 @@
+.stats-container {
+    background-color: white;
+    padding: 10px;
+    margin: 10px 0;
+
+    .stats-card-container {
+        display: flex;
+
+        .stat {
+            display: flex;
+            max-width: 25%;
+            flex-direction: column;
+            padding: 10px;
+
+            .title {
+                font-weight: 700;
+                font-size: 18px;
+                border-left: 1px solid;
+                padding-left: 10px;
+            }
+
+            .description {
+                font-size: 13px;
+                padding-left: 10px;
+                padding-top: 10px;
+            }
+        }
+    }
+}

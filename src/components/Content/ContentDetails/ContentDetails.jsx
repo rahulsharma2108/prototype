@@ -4,6 +4,7 @@ import { getImageUrl } from '../../../common/utils'
 import { QuestionCard } from '../../Card/QuestionCard'
 import { Recommendations } from './Recommendations'
 import './contentDetails.scss'
+import Stats from '../../Stats/Stats'
 
 export const ContentDetails = ({ contentDetails }) => {
 
@@ -23,6 +24,7 @@ export const ContentDetails = ({ contentDetails }) => {
                 title = '',
                 banner = '',
                 bodytext = '',
+                stats,
                 followups = []
             } = card?.data || {}
             return <div key={index} className='roll-out'>
@@ -32,6 +34,7 @@ export const ContentDetails = ({ contentDetails }) => {
                 <div className='response-content'>
                     {card && <QuestionCard title={title} image={getImageUrl(banner)} />}
                     {card && <p>{bodytext}</p>}
+                    {stats && <Stats headline={stats.headline} data={stats.data}/>}
                     {followups?.length > 0 && <Recommendations recommendations={followups} />}
                 </div></div>
         })
