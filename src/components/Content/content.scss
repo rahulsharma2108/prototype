@@ -18,6 +18,9 @@
         height: 80vh;
         .response-content{
             padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap:10px
         }
         .favorite-icon img{
             width: 30px;

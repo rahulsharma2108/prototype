@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import { AppContext } from '../../AppContext';
-import { API_BASE_URL } from '../../common/utils'
 import './card.scss'
 
 export const Card = ({ img, title, layout,id }) => {

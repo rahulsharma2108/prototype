@@ -5,6 +5,7 @@ import { QuestionCard } from '../../Card/QuestionCard'
 import { Recommendations } from './Recommendations'
 import './contentDetails.scss'
 import Stats from '../../Stats/Stats'
+import Testimonial from '../../Testimonial/Testimonial'
 
 export const ContentDetails = ({ contentDetails }) => {
 
@@ -25,7 +26,8 @@ export const ContentDetails = ({ contentDetails }) => {
                 banner = '',
                 bodytext = '',
                 stats,
-                followups = []
+                followups = [],
+                testimonial
             } = card?.data || {}
             return <div key={index} className='roll-out'>
                 <div className='favorite-icon'>
@@ -35,6 +37,7 @@ export const ContentDetails = ({ contentDetails }) => {
                     {card && <QuestionCard title={title} image={getImageUrl(banner)} />}
                     {card && <p>{bodytext}</p>}
                     {stats && <Stats headline={stats.headline} data={stats.data}/>}
+                    {testimonial && <Testimonial data={testimonial}/>}
                     {followups?.length > 0 && <Recommendations recommendations={followups} />}
                 </div></div>
         })
