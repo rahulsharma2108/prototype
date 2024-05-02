@@ -5,7 +5,7 @@
 
     .stats-card-container {
         display: flex;
-
+        justify-content: space-around;
         .stat {
             display: flex;
             max-width: 25%;
