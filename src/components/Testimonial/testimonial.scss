@@ -7,6 +7,7 @@
         background-position: center;
         position: relative;
         min-width: 25%;
+        box-shadow: 4px 8px 10px 4px rgb(224, 223, 223);
         &::before {
             content: "";
             position: absolute;
@@ -42,6 +43,7 @@
         position: relative;
         color: #fff;
         z-index: 1;
+        box-shadow: 4px 8px 10px 4px grey;
         &::before {
             content: "";
             position: absolute;
